@@ -1,0 +1,188 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        /* 容器最大宽度1200px 居中 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* 顶部标题 */
+        .page-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        /* 搜索区域 */
+        .search-wrap {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+            padding: 15px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .search-select {
+            position: relative;
+            min-width: 100px;
+        }
+        .search-select select {
+            width: 100%;
+            height: 44px;
+            padding: 0 15px;
+            border: 1px solid #e5e6eb;
+            border-radius: 6px;
+            outline: none;
+            background: #f8f9fa;
+            font-size: 16px;
+            color: #333;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M10.84 1.84L6 6.69 1.16 1.84A1 1 0 0 0 -0.16 3.16l6 6a1 1 0 0 0 1.32 0l6-6a1 1 0 0 0 -1.32-1.32z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+        }
+        .search-input {
+            flex: 1;
+            max-width: 560px;
+        }
+        .search-input input {
+            width: 100%;
+            height: 44px;
+            border: 1px solid #e5e6eb;
+            border-radius: 6px;
+            outline: none;
+            padding: 0 20px;
+            font-size: 16px;
+            color: #333;
+        }
+        .search-input input::placeholder {
+            color: #999;
+        }
+        .search-btn button {
+            height: 44px;
+            padding: 0 25px;
+            border: none;
+            border-radius: 6px;
+            background: #0078d4;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .search-btn button:hover {
+            background: #0063b1;
+        }
+        /* 导航分类 阶梯式响应式布局 */
+        .nav-categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 默认3列（大屏电脑） */
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .nav-category {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+            padding: 20px;
+            height: 100%;
+        }
+        .category-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0078d4;
+        }
+        /* 单行靠左 等高铁框链接 */
+        .link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .link-item {
+            height: 40px;
+            line-height: 40px;
+        }
+        .link-item a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            padding: 0 12px;
+            border-radius: 4px;
+            background: #f8f9fa;
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            transition: all 0.2s;
+        }
+        .link-item a:hover {
+            background: #f0f7ff;
+            color: #0078d4;
+        }
+        /* 分割线 */
+        .split-line {
+            width: 100%;
+            height: 1px;
+            background: #e5e6eb;
+            margin-bottom: 20px;
+        }
+        /* 底部文字 居中 */
+        .footer-text {
+            text-align: center;
+            font-size: 14px;
+            color: #999;
+            line-height: 1.6;
+        }
+
+        /* 阶梯式响应式：1024px以下显示2列（平板/小屏电脑） */
+        @media (max-width: 1024px) {
+            .nav-categories {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .container {
+                max-width: 900px;
+            }
+        }
+
+        /* 768px以下显示1列（手机） */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+            .search-wrap {
+                flex-direction: column;
+                gap: 12px;
+                max-width: 100%;
+            }
+            .search-select, .search-input {
+                width: 100%;
+                max-width: 100%;
+            }
+            .nav-categories {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .container {
+                max-width: 100%;
+            }
+        }
